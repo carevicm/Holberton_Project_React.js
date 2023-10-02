@@ -59,7 +59,7 @@ export const loginFailure = () => {
 export const loginRequest = (email, password) => {
   return (dispatch) => {
     dispatch(login(email, password));
-    return fetch("http://localhost:8564/login-success.json")
+    return fetch("/login-success.json")
       .then((res) => res.json())
       .then((json) => dispatch(loginSuccess()))
       .catch((error) => dispatch(loginFailure()));
